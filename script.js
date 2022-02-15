@@ -1,16 +1,14 @@
-const largestCountries = ["China", "India", "USA"]
-const bestFruits = ["Apples", "Bananas"]
-
 function generateSentence(desc, arr) {
-    if (largestCountries) {
-        for (let i = 0; i < arr.length; i++) {
-            console.log(`The 3 largest countries are ${arr[i]}`)
+    let baseString = `The ${arr.length} ${desc} are `
+    const lastIndex = arr.length - 1
+    for (let i = 0; i < arr.length; i++) {
+        if (i === lastIndex) {
+            baseString += arr[i]
         } else {
-            for (let i = 0; i < arr.length; i++) {
-                console.log(`The 2 best fruits are ${arr[i]}`)
-            }
+            baseString += arr[i] + ", "
         }
     }
+    return baseString
 }
-
-generateSentece()
+const sentence = generateSentence("highest mountains", ["Mount Everest", "K2"])
+console.log(sentence)
