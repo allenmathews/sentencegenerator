@@ -1,6 +1,6 @@
 function generateSentence(desc, arr) {
     let baseString = `The ${arr.length} ${desc} are `
-    const lastIndex = arr.length - 1
+    const lastIndex = arr.length - 1;
     for (let i = 0; i < arr.length; i++) {
         if (i === lastIndex) {
             baseString += arr[i]
@@ -8,7 +8,27 @@ function generateSentence(desc, arr) {
             baseString += arr[i] + ", "
         }
     }
-    return baseString
+    return baseString;
 }
-const sentence = generateSentence("highest mountains", ["Mount Everest", "K2"])
-console.log(sentence)
+
+// let sentence = generateSentence("highest mountains", ["Mount Everest", "K2"])
+let sentence = generateSentence("best fruits", ["apples", "oranges"])
+console.log("hello")
+let mySentence = []
+const inputEl = document.getElementById("input-el")
+let inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
+
+inputBtn.addEventListener("click", function() {
+    mySentence.push(inputEl.value)
+    console.log(mySentence)
+    renderSentence()
+})
+
+function renderSentence() {
+    let listSentence = ""
+    for (let i = 0; i < mySentence.length; i++) {
+        listSentence += "<li>" + mySentence[i] + "</li>"
+    }
+    ulEl.innerHTML = listSentence
+}
