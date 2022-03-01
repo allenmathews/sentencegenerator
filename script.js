@@ -11,13 +11,15 @@ function generateSentence(desc, arr) {
     return baseString;
 }
 
-// let sentence = generateSentence("highest mountains", ["Mount Everest", "K2"])
+
 let sentence = generateSentence("best fruits", ["apples", "oranges"])
 console.log("hello")
 let mySentence = []
 const inputEl = document.getElementById("input-el")
 let inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
+
+
 
 inputBtn.addEventListener("click", function() {
     mySentence.push(inputEl.value)
